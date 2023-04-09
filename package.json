@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "scripts": {
+    "build": "cd front && npm install && cd .. && pip install -r back/pip.txt",
+    "front": "npm run --prefix front dev",
+    "back-windows": "cd back && start uvicorn app:app && cd ..",
+    "back": "cd back && gunicorn -k uvicorn.workers.UvicornWorker app:app -D && cd ..",
+    "start-windows": "concurrently \"npm run front\" \"npm run back-windows\"",
+    "start": "concurrently \"npm run front\" \"npm run back\""
+  }
+
+}
