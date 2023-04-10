@@ -27,9 +27,6 @@ export default {
 nav {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  top: 35%;
-  left: 5%;
 }
 
 .home-container {
